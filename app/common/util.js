@@ -34,7 +34,7 @@ RiverBot.util = {
 
     },
 
-    "log" = function( logMessage ) {
+    "log" : function( logMessage ) {
         let date = new Date();
         const options = {
             year: 'numeric',

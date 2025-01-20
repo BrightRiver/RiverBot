@@ -24,7 +24,7 @@ function ff_innit() {
     // addFF expected format '{command:string, message:string'}'
     // example user slaps target with fish
     RiverBot.addff = function (channel, tags, message, args) {
-        if (!RiverBot.util.rolecheck('broadcaster', tags)) {
+        if (!RiverBot.util.rolecheck('mod', tags)) {
             return false;
         }
 

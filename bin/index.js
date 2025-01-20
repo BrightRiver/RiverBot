@@ -17,8 +17,6 @@ RiverBot.client = client;
 client.on('message', (channel, tags, message, self) => {
     if (self || !message.startsWith('!')) return;
 
-    RiverBot.log(JSON.stringify(tags));
-
     let args = message.slice(1).split(' ');
     let command = args.shift().toLowerCase();
 
