@@ -1,0 +1,8 @@
+{
+    "twitch" : {
+        "username" : "name",
+        "password" : "oauth:token",
+        "channels" : ["channel"]
+    },
+    "currency" : {}
+}

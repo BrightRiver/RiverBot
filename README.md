@@ -1,0 +1,2 @@
+-- for help setting up the authorization techno tim's video was most helpful
+-- https://www.youtube.com/watch?v=7uSjKbAUHXg

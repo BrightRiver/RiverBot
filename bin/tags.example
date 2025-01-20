@@ -1,0 +1,26 @@
+{
+    "badge-info": null,
+    "badges": {
+        "broadcaster": "1"
+    },
+    "client-nonce": "df055a7fbc822c015edb9c03d9b29155",
+    "color": "#0000FF",
+    "display-name": "ScornedRiver",
+    "emotes": null,
+    "first-msg": false,
+    "flags": null,
+    "id": "5b04838a-7662-4d87-96f4-76e227b4200e",
+    "mod": false,
+    "returning-chatter": false,
+    "room-id": "55152507",
+    "subscriber": false,
+    "tmi-sent-ts": "1737379338437",
+    "turbo": false,
+    "user-id": "55152507",
+    "user-type": null,
+    "emotes-raw": null,
+    "badge-info-raw": null,
+    "badges-raw": "broadcaster/1",
+    "username": "scornedriver",
+    "message-type": "chat"
+}
