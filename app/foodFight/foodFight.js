@@ -8,7 +8,6 @@ function ff_innit() {
             if (typeof RiverBot[key] == 'undefined') {
                 message = fightcommands[key]
                 let command = 'RiverBot["' + key.toLowerCase() + '"] = function(channel, tags, message, args){;RiverBot.sendFoodFight("' + message + '", channel, tags, args);}'
-                // RiverBot.log(command);
                 res = eval(command);
             }
         }
@@ -52,5 +51,3 @@ function ff_innit() {
     }
 }
 ff_innit();
-
-// RiverBot.log((RiverBot.cakebomb))
