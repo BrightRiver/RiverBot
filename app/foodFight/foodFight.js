@@ -6,6 +6,7 @@ function ff_innit() {
     for (const key in fightcommands) {
         if (fightcommands.hasOwnProperty(key)) {
             if (typeof RiverBot[key] == 'undefined') {
+                RiverBot.commandList.push(key);
                 message = fightcommands[key]
                 let command = 'RiverBot["' + key.toLowerCase() + '"] = function(channel, tags, message, args){;RiverBot.sendFoodFight("' + message + '", channel, tags, args);}'
                 res = eval(command);
@@ -35,6 +36,8 @@ function ff_innit() {
         if (typeof RiverBot[commandName] == 'undefined') {
             //update json file
             fightcommands[commandName] = ffMessage;
+            RiverBot.commandList.push(commandName);
+
             fs.writeFile('./app/foodFight/fightCommands.json', JSON.stringify(fightcommands), function (err) {
                 if (err) throw err;
                 console.log('Saved!');

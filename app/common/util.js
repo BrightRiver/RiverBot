@@ -69,3 +69,8 @@ RiverBot.util = {
 }
 
 }
+
+RiverBot.commands = function() {
+    message = RiverBot.commandList.join(', ');
+    RiverBot.client.say(RiverBot.input.channel, message);
+}

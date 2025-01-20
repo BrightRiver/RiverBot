@@ -104,7 +104,6 @@ UserUtilities = {
     },
 
     getOrCreatePlayer: function (tags) {
-        RiverBot.util.log(typeof RiverBot.UserList[RiverBot.input.channel][tags['user-id']]);
         if (typeof RiverBot.UserList[RiverBot.input.channel][tags['user-id']] == 'undefined') {
             RiverBot.util.log('Creating New User : ' + tags['display-name']);
             currentUser = new user(tags, false);

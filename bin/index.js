@@ -1,4 +1,6 @@
-RiverBot = {};
+RiverBot = {
+    "commandList" : []
+};
 const tmi = require('tmi.js');
 config = require('./config.json');
 require('./include');
