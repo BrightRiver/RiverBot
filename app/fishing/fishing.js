@@ -26,5 +26,6 @@ RiverBot.fish = function (channel, tags, message, args) {
         + fishName + ' weighing ' + (fishWeight / 1000).toFixed(2) + 'KG as a '
         + fishRank + ' catch thats ' + fishValue + ' river coins for you.';
     RiverBot.client.say(channel, ChatMessage);
+    RiverBot.player.addCoins(fishValue);
 
 }
