@@ -3,7 +3,6 @@ fishList = require('./fishList.json');
 //River bot public commands
 
 RiverBot.fish = function (channel, tags, message, args) {
-    // select rank
     let rankValue = RiverBot.util.random(100);
     var RankSelectionObj = false;
     var fishWeight = false;

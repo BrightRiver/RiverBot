@@ -1,4 +1,3 @@
-const fs = require("fs");
 const logfile = './logs/riverLog.log';
 
 RiverBot.util = {
