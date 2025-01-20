@@ -1,56 +1,186 @@
 {
-    "trash" : {
-        "weightRange" : {
-            "min" : 0,
-            "max" : 1
+    "trash": {
+        "rankDisplay" : "trash",
+        "resultRange": {
+            "min": 0,
+            "max": 21
         },
-        "valueMultiplier" : 1,
-        "tags" : [],
-        "items" : []
+        "weightRange": {
+            "min": 1.5,
+            "max": 5000
+        },
+        "valueMultiplier": 1,
+        "tags": [
+            "Thanks for cleaning up some litter!",
+            "That's just some river trash, but every bit counts!",
+            "Looks like you found some junk in the stream!",
+            "Even the trash is part of the ecosystem!",
+            "Good job keeping the river clean!"
+        ],
+        "items": [
+            "old boot",
+            "branch",
+            "tin can",
+            "bike tyre",
+            "glass bottle",
+            "Thel Industries Steel Spork",
+            "Stetson hat"
+        ]
     },
-    "common" : {
-        "weightRange" : {
-            "min" : 0,
-            "max" : 1
+    "common": {
+        "rankDisplay" : "common",
+        "resultRange": {
+            "min": 21,
+            "max": 61
         },
-        "valueMultiplier" : 1,
-        "tags" : [],
-        "items" : []
+        "weightRange": {
+            "min": 3000,
+            "max": 7000
+        },
+        "valueMultiplier": 3,
+        "tags": [
+            "A good catch, but we can do better!",
+            "Nothing too fancy, but still a solid catch!",
+            "A common catch, but it’s always nice to have more fish!",
+            "Looks like you've caught a river regular!",
+            "A common one, but still a keeper!"
+        ],
+        "items": [
+            "Trout",
+            "Bass",
+            "Carp",
+            "Perch",
+            "Catfish",
+            "Pike",
+            "Bluegill",
+            "Roach",
+            "Tilapia",
+            "Salmon"
+        ]
     },
-    "rare" : {
-        "weightRange" : {
-            "min" : 0,
-            "max" : 1
+    "rare": {
+        "rankDisplay" : "rare",
+        "resultRange": {
+            "min": 61,
+            "max": 86
         },
-        "valueMultiplier" : 1,
-        "tags" : [],
-        "items" : []
+        "weightRange": {
+            "min": 4000,
+            "max": 8000
+        },
+        "valueMultiplier": 5,
+        "tags": [
+            "That's a rare find, nice work!",
+            "Not bad! You've got yourself a rare one!",
+            "A rare catch! Keep it up!",
+            "Nice! A rare fish to add to your collection!",
+            "Your fishing skills are paying off with this rare beauty!"
+        ],
+        "items": [
+            "Golden Koi",
+            "Rainbow Trout",
+            "Crystal Perch",
+            "Silver Eel",
+            "Sapphire Pike",
+            "Amethyst Catfish",
+            "Emerald Bass",
+            "Obsidian Carp",
+            "Aurora Salmon",
+            "Twilight Snapper"
+        ]
     },
-    "ultra-rare" : {
-        "weightRange" : {
-            "min" : 0,
-            "max" : 1
+    "ultra-rare": {
+        "rankDisplay" : "ultra rare",
+        "resultRange": {
+            "min": 86,
+            "max": 95
         },
-        "valueMultiplier" : 1,
-        "tags" : [],
-        "items" : []
+        "weightRange": {
+            "min": 7000,
+            "max": 15000
+        },
+        "valueMultiplier": 10,
+        "tags": [
+            "Now that’s an ultra-rare catch!",
+            "Ultra rare! You're really making waves!",
+            "You've pulled in something truly special!",
+            "An ultra-rare catch, showing off those skills!",
+            "What a catch! An ultra-rare treasure from the river!"
+        ],
+        "items": [
+            "Starlight Sturgeon",
+            "Moonlit Mackerel",
+            "Glacial Barracuda",
+            "Phantom Flounder",
+            "Celestial Haddock",
+            "Aurora Anglerfish",
+            "Eclipse Eel",
+            "Crystalfin Tuna",
+            "Shadowscale Salmon",
+            "Goldenray Swordfish"
+        ]
     },
-    "legendary" : {
-        "weightRange" : {
-            "min" : 0,
-            "max" : 1
+    "legendary": {
+        "rankDisplay" : "legendary",
+        "resultRange": {
+            "min": 95,
+            "max": 99
         },
-        "valueMultiplier" : 1,
-        "tags" : [],
-        "items" : []
+        "weightRange": {
+            "min": 15000,
+            "max": 25000
+        },
+        "valueMultiplier": 15,
+        "tags": [
+            "A legendary catch! This one will be remembered!",
+            "A true legend of the river, you've earned it!",
+            "The legends of this fish will be told for ages!",
+            "You’ve caught something truly legendary!",
+            "The river's legends don’t come easy, but you've done it!"
+        ],
+        "items": [
+            "Kraken's Bane",
+            "Poseidon's Wrath",
+            "Leviathan's Fang",
+            "Eternal Tidebreaker",
+            "Sea Serpent's Embrace",
+            "Tridentscale Monarch",
+            "Dreadfin Tyrant",
+            "Maelstrom Lurker",
+            "Abyssal Wyrm",
+            "Stormcaller's Herald",
+            "Golden StarFeesh Legend"
+        ]
     },
-    "mythical" : {
-        "weightRange" : {
-            "min" : 0,
-            "max" : 1
+    "mythical": {
+        "rankDisplay" : "mythical",
+        "resultRange": {
+            "min": 99,
+            "max": 100
         },
-        "valueMultiplier" : 1,
-        "tags" : [],
-        "items" : []
+        "weightRange": {
+            "min": 25000,
+            "max": 45000
+        },
+        "valueMultiplier": 20,
+        "tags": [
+            "You've fished up a mythical creature, unbelievable!",
+            "A mythical catch! This one will go down in history!",
+            "The river’s mythical secrets have been unlocked!",
+            "Only the truly skilled land a mythical catch like this!",
+            "This mythical catch is one for the books!"
+        ],
+        "items": [
+            "Aetherial Leviathan",
+            "Celestial Tidecaller",
+            "Frostveil Siren",
+            "Phoenixfin Barracuda",
+            "Eclipsefang Koi",
+            "Voidscale Sovereign",
+            "Starforged Marlin",
+            "Luminara Wyrm",
+            "Chronofin Eel",
+            "Spirit of the Deep"
+        ]
     }
 }

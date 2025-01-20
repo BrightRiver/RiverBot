@@ -27,11 +27,24 @@ RiverBot.util = {
     },
 
     "coinflip": function () {
-
+       let number = Math.floor(Math.random() * 2);
+       if(number == 1) {
+        return 'heads';
+       }
+       return 'tails';
     },
 
-    "randomNumber": function (max) {
+    "random": function (max) {
+        let number = Math.floor(Math.random() * (max + 1));
+        return number;
+    },
 
+    
+    "randomBetween": function (min, max) {
+        range = max - min;
+        let number = Math.floor(Math.random() * (range + 1));
+        result = number + min;
+        return result;
     },
 
     "log" : function( logMessage ) {
