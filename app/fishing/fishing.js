@@ -27,5 +27,5 @@ RiverBot.fish = function (channel, tags, message, args) {
         + fishRank + ' catch thats ' + fishValue + ' river coins for you.';
     RiverBot.client.say(channel, ChatMessage);
     RiverBot.player.addCoins(fishValue);
-
+    RiverBot.player.addCooldown('fish', 60);
 }

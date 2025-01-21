@@ -1,7 +1,9 @@
+
 const userWriteFile = './app/players/{channel}.json';
 const userReadFile = '../players/{channel}.json';
 
 class user {
+
     details = {
         id: '',
         displayName: '',
@@ -14,6 +16,7 @@ class user {
     }
     fishnet = [];
     inventory = [];
+    cooldowns = {};
 
     constructor(data, existing = true) {
         // use existing saved data
@@ -22,6 +25,14 @@ class user {
             this.wallet = data.wallet;
             this.fishnet = data.fishnet;
             this.inventory = data.inventory;
+
+            for (const functionName in data.cooldowns) {
+                this.cooldowns[functionName] = RiverBot.util.Cooldown(
+                    data.cooldowns[functionName]['functionName']
+                    , data.cooldowns[functionName]['duration']
+                    , data.cooldowns[functionName]['startTime']
+                );
+            }
 
             // create new user from tags
         } else {
@@ -43,7 +54,7 @@ class user {
 
     spendCoins = function (amount) {
         if (this.wallet.riverCoin > amount) {
-            this.wallet.riverCoin = this.wallet.riverCoin - amount; 
+            this.wallet.riverCoin = this.wallet.riverCoin - amount;
             this.save();
             return true;
         }
@@ -56,12 +67,27 @@ class user {
         return this.wallet.riverCoin;
     }
 
+    checkCooldown = function (command) {
+        if (this.cooldowns[command]) {
+            if (this.cooldowns[command].active()) {
+                return this.cooldowns[command].remaining();
+            }
+        }
+        return false;
+    }
+
+    addCooldown = function (command, duration) {
+        this.cooldowns[command] = RiverBot.util.Cooldown(command, duration);
+        this.save();
+    }
+
     save = function () {
         let playerData = {
             "details": this.details,
             "wallet": this.wallet,
             "fishnet": this.fishnet,
-            "inventory": this.inventory
+            "inventory": this.inventory,
+            "cooldowns": this.cooldowns
         };
         let playerId = this.details.id;
 

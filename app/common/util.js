@@ -26,11 +26,11 @@ RiverBot.util = {
     },
 
     "coinflip": function () {
-       let number = Math.floor(Math.random() * 2);
-       if(number == 1) {
-        return 'heads';
-       }
-       return 'tails';
+        let number = Math.floor(Math.random() * 2);
+        if (number == 1) {
+            return 'heads';
+        }
+        return 'tails';
     },
 
     "random": function (max) {
@@ -38,7 +38,7 @@ RiverBot.util = {
         return number;
     },
 
-    
+
     "randomBetween": function (min, max) {
         range = max - min;
         let number = Math.floor(Math.random() * (range + 1));
@@ -46,7 +46,7 @@ RiverBot.util = {
         return result;
     },
 
-    "log" : function( logMessage ) {
+    "log": function (logMessage) {
         let date = new Date();
         const options = {
             year: 'numeric',
@@ -55,22 +55,41 @@ RiverBot.util = {
             hour: 'numeric',
             minute: 'numeric',
             second: 'numeric',
-          };
-          
-          timestamp = date.toLocaleDateString('en-GB', options);
-          if(typeof logMessage == 'object') {
+        };
+
+        timestamp = date.toLocaleDateString('en-GB', options);
+        if (typeof logMessage == 'object') {
             logMessage = JSON.stringify(logMessage);
-          }
-    
+        }
+
         let messageString = timestamp + ' : ' + logMessage + '\n';
-        fs.appendFile(logfile,messageString,(err) => {
+        fs.appendFile(logfile, messageString, (err) => {
             if (err) throw err;
         });
+    },
+
+    "Cooldown": function (functionName, duration, startTime = false) {
+        if (!startTime) {
+            startTime = new Date().getTime();
+        }
+        return {
+            "functionName": functionName,
+            "startTime": startTime,
+            "duration": duration,
+            "active": function () {
+                currentTime = new Date().getTime();
+                return currentTime < (this.startTime + (this.duration * 1000));
+            },
+
+            "remaining": function () {
+                currentTime = new Date().getTime();
+                return Math.floor(((this.startTime + (this.duration * 1000)) - currentTime) / 1000);
+            }
+        }
+    }
 }
 
-}
-
-RiverBot.commands = function() {
+RiverBot.commands = function () {
     message = RiverBot.commandList.join(', ');
     RiverBot.client.say(RiverBot.input.channel, message);
 }

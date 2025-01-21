@@ -33,7 +33,13 @@ client.on('message', (channel, tags, message, self) => {
     let command = args.shift().toLowerCase();
 
     if (typeof RiverBot[command] == 'function') {
-        RiverBot[command](channel, tags, message, args);
+        secondsRemaining = RiverBot.player.checkCooldown(command);
+        if(secondsRemaining > 0) {
+            message = tags['display-name'] + 'looks like !' + command +' is still on cooldown ' + secondsRemaining + ' seconds remaining';
+            RiverBot.client.say(channel, message);
+        } else {
+            RiverBot[command](channel, tags, message, args);
+        }
     }
 });
 
