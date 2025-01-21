@@ -1,7 +1,4 @@
 fishList = require('./fishList.json');
-
-//River bot public commands
-
 RiverBot.fish = function (channel, tags, message, args) {
     let rankValue = RiverBot.util.random(100);
     var RankSelectionObj = false;
@@ -29,3 +26,6 @@ RiverBot.fish = function (channel, tags, message, args) {
     RiverBot.player.addCoins(fishValue);
     RiverBot.player.addCooldown('fish', 60);
 }
+
+RiverBot.commandList.push('fish');
+

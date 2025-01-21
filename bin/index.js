@@ -1,6 +1,4 @@
-RiverBot = {
-    "commandList" : []
-};
+RiverBot = {};
 const tmi = require('tmi.js');
 config = require('./config.json');
 require('./include');
@@ -21,10 +19,10 @@ client.on('message', (channel, tags, message, self) => {
     if (self || !message.startsWith('!')) return;
 
     RiverBot.input = {
-        "channel" : channel.replace('#',''),
-        "tags" : tags,
-        "message" : message,
-        "self" : self
+        "channel": channel.replace('#', ''),
+        "tags": tags,
+        "message": message,
+        "self": self
     }
 
     RiverBot.player = UserUtilities.getOrCreatePlayer(tags);
@@ -34,8 +32,8 @@ client.on('message', (channel, tags, message, self) => {
 
     if (typeof RiverBot[command] == 'function') {
         secondsRemaining = RiverBot.player.checkCooldown(command);
-        if(secondsRemaining > 0) {
-            message = tags['display-name'] + 'looks like !' + command +' is still on cooldown ' + secondsRemaining + ' seconds remaining';
+        if (secondsRemaining > 0) {
+            message = tags['display-name'] + 'looks like !' + command + ' is still on cooldown ' + secondsRemaining + ' seconds remaining';
             RiverBot.client.say(channel, message);
         } else {
             RiverBot[command](channel, tags, message, args);
