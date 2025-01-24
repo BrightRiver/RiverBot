@@ -7,6 +7,7 @@ RiverBot.fish = function (channel, tags, message, args) {
     var fishTag = false;
     var fishValue = false;
     var fishName = false;
+
     for (const key in fishList) {
         if (fishList[key]['resultRange']['min'] <= rankValue && fishList[key]['resultRange']['max'] > rankValue) {
             RankSelectionObj = fishList[key];
@@ -16,12 +17,13 @@ RiverBot.fish = function (channel, tags, message, args) {
     fishRank = RankSelectionObj['rankDisplay'];
     fishWeight = RiverBot.util.randomBetween(RankSelectionObj['weightRange']['min'], RankSelectionObj['weightRange']['max']);
     fishValue = Math.floor((fishWeight / 1000) * RankSelectionObj['valueMultiplier']);
-    fishName = RankSelectionObj['items'][RiverBot.util.random(RankSelectionObj['items'].length)];
-    fishTag = RankSelectionObj['tags'][RiverBot.util.random(RankSelectionObj['tags'].length)];
+    fishName = RankSelectionObj['items'][RiverBot.util.random(RankSelectionObj['items'].length - 1)];
+    fishTag = RankSelectionObj['tags'][RiverBot.util.random(RankSelectionObj['tags'].length - 1)];
 
     var ChatMessage = user = tags['display-name'] + ' has cast their line in the river and caught '
         + fishName + ' weighing ' + (fishWeight / 1000).toFixed(2) + 'KG as a '
-        + fishRank + ' catch thats ' + fishValue + ' river coins for you.';
+        + fishRank + ' catch thats ' + fishValue + ' river coins for you. ' + fishTag;
+
     RiverBot.client.say(channel, ChatMessage);
     RiverBot.player.addCoins(fishValue);
     RiverBot.player.addCooldown('fish', 60);

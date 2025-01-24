@@ -7,3 +7,6 @@ RiverBot.commands = function () {
 
 // Add common commands available to all users
 RiverBot.commandList.push('balance');
+RiverBot.commandList.push('lurk');
+RiverBot.commandList.push('unlurk');
+RiverBot.commandList.push('wurk');
