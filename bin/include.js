@@ -1,10 +1,10 @@
 // requirements
 fs = require("fs");
 
-
-
 // Data Models
 require('../app/models/user');
+require('../app/models/leaderboard');
+
 
 
 // Moduels
