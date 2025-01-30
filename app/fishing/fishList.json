@@ -24,7 +24,9 @@
             "bike tyre",
             "glass bottle",
             "Thel Industries Steel Spork",
-            "Stetson hat"
+            "Stetson hat",
+            "Roll of unpopped bubblewrap",
+            "Tesco trolly"
         ]
     },
     "common": {
@@ -86,7 +88,9 @@
             "Emerald Bass",
             "Obsidian Carp",
             "Aurora Salmon",
-            "Twilight Snapper"
+            "Twilight Snapper",
+            "Blob fish",
+            "Badger fish"
         ]
     },
     "ultra-rare": {
@@ -117,7 +121,8 @@
             "Eclipse Eel",
             "Crystalfin Tuna",
             "Shadowscale Salmon",
-            "Goldenray Swordfish"
+            "Goldenray Swordfish",
+            "Parsnip Stingray with a parsnip in it's mouth"
         ]
     },
     "legendary": {
@@ -149,7 +154,8 @@
             "Maelstrom Lurker",
             "Abyssal Wyrm",
             "Stormcaller's Herald",
-            "Golden StarFeesh Legend"
+            "Golden StarFeesh Legend",
+            "Bone Sea Serpant"
         ]
     },
     "mythical": {

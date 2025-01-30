@@ -27,3 +27,15 @@ RiverBot.unlurk = function(channel, tags, message, args) {
     RiverBot.player.addCooldown('unlurk', 300);
 
 }
+
+RiverBot.discord = function(channel, tags, message, args) {
+
+    if (!RiverBot.util.rolecheck('mod', tags)) {
+        return false;
+    }
+
+    let link = config.discord.joinlink;
+    message = 'Come and chill at the river bank, our discord is open : ' + link;
+    RiverBot.client.say(channel, message);
+
+}

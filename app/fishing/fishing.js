@@ -13,27 +13,35 @@ class leaderboard {
         if (userEnty.entry === false) {
             this.entries.push(entry);
         } else {
-            let existingValue = userEnty[this.sortProperty];
+            let existingValue = userEnty['entry'][this.sortProperty];
             let newValue = entry[this.sortProperty];
+            let overwrite = true;
+
+            RiverBot.util.log(existingValue);
+            RiverBot.util.log(newValue);
+
             switch (this.sortDirection) {
                 case 'DESC':
                     if (existingValue > newValue) {
-                        return false;
+                        overwrite = false;
                     }
                     break;
                 case 'ASC':
                     if (existingValue < newValue) {
-                        return false;
+                        overwrite = false;
                     }
                     break;
                 case 'CST':
                     if (!this.checkValue(existingValue, newValue)) {
-                        return false;
+                        overwrite = false;
                     }
                     break;
             }
-            this.entries.splice(userEnty.index, 1);
-            this.entries.push(entry);
+            if(overwrite) {
+                this.entries.splice(userEnty.index, 1);
+                this.entries.push(entry);
+            }
+            
         }
 
         this.save();

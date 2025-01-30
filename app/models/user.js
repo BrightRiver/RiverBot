@@ -133,6 +133,8 @@ UserUtilities = {
         if (typeof RiverBot.UserList[RiverBot.input.channel][tags['user-id']] == 'undefined') {
             RiverBot.util.log('Creating New User : ' + tags['display-name']);
             currentUser = new user(tags, false);
+            currentUser.save();
+            RiverBot.UserList[RiverBot.input.channel][tags['user-id']] = currentUser;
         } else {
             currentUser = RiverBot.UserList[RiverBot.input.channel][tags['user-id']];
         }
