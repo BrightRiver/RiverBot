@@ -27,8 +27,8 @@ RiverBot.unlurk = function(channel, tags, message, args) {
     RiverBot.player.addCooldown('unlurk', 300);
 
 }
-
-RiverBot.discord = function(channel, tags, message, args) {
+ 
+RiverBot.discord = function(channel, tags, message, args) {        
 
     if (!RiverBot.util.rolecheck('mod', tags)) {
         return false;

@@ -15,6 +15,21 @@ const client = new tmi.Client({
 
 client.connect();
 RiverBot.client = client;
+
+
+function scheduleRandomEvent() {
+    // Generate a random time between 5 and 15 minutes (in milliseconds)
+    const randomTime = Math.floor(Math.random() * (15 - 5 + 1) + 5) * 60000;
+
+    RiverBot.util.log(`Next event in ${randomTime / 60000} minutes.`);
+
+    setTimeout(() => {
+        RiverBot.events.triggerRandomEvent();  // Run the event
+        scheduleRandomEvent(); // Schedule the next one
+    }, randomTime);
+}
+scheduleRandomEvent()
+
 client.on('message', (channel, tags, message, self) => {
     if (self || !message.startsWith('!')) return;
 
