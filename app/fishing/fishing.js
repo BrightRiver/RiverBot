@@ -59,7 +59,7 @@ class leaderboard {
 
 
     reset = function () {
-        this.entries = {};
+        this.entries = [];
     }
 
     sortFunctions = {
@@ -129,17 +129,8 @@ sortProperty = 'value'
     }
 
     loadLeaderboard = function (channel) {
-        this.saveFile = FISHING_LEADERBOARD_DIR + channel + '.json';
+        this.saveFile = RiverBot.storage[RiverBot.input.channel] + '\\fishing.lb.json';
         this.channel = channel;
-        //check fishing leaderboard dir exists, create if not
-        if (!fs.existsSync(FISHING_LEADERBOARD_DIR)) {
-            fs.mkdir(FISHING_LEADERBOARD_DIR, (err) => {
-                if (err) {
-                    return console.error(err);
-                }
-                console.log('Directory created successfully!');
-            });
-        }
 
         // check channel leaderboard exists, if not set leaderboard to empty object
         if (fs.existsSync(this.saveFile)) {

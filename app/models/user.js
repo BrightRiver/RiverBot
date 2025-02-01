@@ -1,7 +1,3 @@
-
-const userWriteFile = './app/players/{channel}.json';
-const userReadFile = '../players/{channel}.json';
-
 class user {
 
     details = {
@@ -10,7 +6,7 @@ class user {
         title: '',
         hp: 0,
         hpMax: 0
-    };
+    }; 
     wallet = {
         "riverCoin": 0
     }
@@ -91,10 +87,11 @@ class user {
         };
         let playerId = this.details.id;
 
+        let userFile = RiverBot.storage[RiverBot.input.channel] + '\\users.json';
 
-        let playerList = require(userReadFile.replace('{channel}', RiverBot.input.channel));
+        let playerList = require(userFile);
         playerList[playerId] = playerData;
-        fs.writeFile(userWriteFile.replace('{channel}', RiverBot.input.channel), JSON.stringify(playerList), function (err) {
+        fs.writeFile(userFile, JSON.stringify(playerList), function (err) {
             if (err) throw err;
             console.log('Saved!');
         });
@@ -107,17 +104,18 @@ UserUtilities = {
         channels = config["twitch"]["channels"];
         let users = {};
         channels.forEach(function (channelName) {
+            let userFile = RiverBot.storage[channelName] + '\\users.json';
             users[channelName] = {};
 
-            fs.exists(userWriteFile.replace('{channel}', channelName), function (exists) {
+            fs.exists(userFile, function (exists) {
                 console.log(exists);
                 if (!exists) {
-                    fs.writeFile(userWriteFile.replace('{channel}', channelName), JSON.stringify({}), function (err) {
+                    fs.writeFile(userFile, JSON.stringify({}), function (err) {
                         if (err) throw err;
                         console.log('Saved!');
                     });
                 } else {
-                    playerList = require(userReadFile.replace('{channel}', channelName));
+                    playerList = require(userFile);
 
                     for (const key in playerList) {
                         users[channelName][key] = new user(playerList[key]);
