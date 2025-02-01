@@ -12,6 +12,7 @@ require('../app/common/util');
 require('../app/common/commands');
 require('../app/common/RiverBot');
 require('../app/common/wallet');
+require('../app/common/counters');
 require('../app/foodFight/foodFight');
 require('../app/fishing/fishing');
 require('../app/casino/casino');

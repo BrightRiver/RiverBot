@@ -16,3 +16,4 @@ for (var i = 0; i < config["twitch"]["channels"].length; i++) {
 }
 
 UserUtilities.loadAllUsers();
+loadExistingCounters();
